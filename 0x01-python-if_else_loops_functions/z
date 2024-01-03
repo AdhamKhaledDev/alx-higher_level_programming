@@ -7,8 +7,10 @@ read filename
 # Create the file
 touch $filename
 
+# Add '#!/usr/bin/python3' to the first line
+echo '#!/usr/bin/python3' > $filename
+
 # Change the file permissions to 777
 chmod 777 $filename
 
 echo "File '$filename' created with permissions set to 777."
-
