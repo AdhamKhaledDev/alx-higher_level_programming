@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Ask for the name of the file
+echo "Please enter the name of the file:"
+read filename
+
+# Create the file
+touch $filename
+
+# Change the file permissions to 777
+chmod 777 $filename
+
+echo "File '$filename' created with permissions set to 777."
+
