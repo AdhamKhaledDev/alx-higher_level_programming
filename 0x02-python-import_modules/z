@@ -1,8 +1,0 @@
-#!/bin/bash
-
-echo "Enter the name of the file:"
-read filename
-
-touch $filename
-chmod 777 $filename
-echo "#!/usr/bin/python3" > $filename
