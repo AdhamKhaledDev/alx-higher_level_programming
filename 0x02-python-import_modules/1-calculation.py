@@ -1,9 +1,15 @@
-if __name__ == "__main__":
-    from calculator_1 import add, sub, mul, div
+#!/usr/bin/python3
 
-    a = 10
-    b = 5
-    print('{:d} + {:d} = {:d}'.format(a, b, (add(a, b))))
-    print('{:d} - {:d} = {:d}'.format(a, b, (sub(a, b))))
-    print('{:d} * {:d} = {:d}'.format(a, b, (mul(a, b))))
-    print('{:d} / {:d} = {:d}'.format(a, b, (div(a, b))))
+if __name__ == "__main__":
+	"""Print the number of and list of arguments."""
+	import sys
+
+	count = len(sys.argv) - 1
+	if count == 0:
+		print("0 arguments.")
+	elif count == 1:
+		print("1 argument:")
+	else:
+		print("{} arguments:".format(count))
+	for i in range(count):
+		print("{}: {}".format(i + 1, sys.argv[i + 1]))
