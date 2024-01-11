@@ -1,4 +1,13 @@
 #!/usr/bin/python3
+def weight_average(input_list=[]):
+    if not input_list:
+        return 0
 
-def square_matrix_map(matrix=[]):
-    return list(map(lambda submat: list(map(lambda e: e**2, submat)), matrix))
+    numerator = 0
+    denominator = 0
+
+    for pair in input_list:
+        numerator += pair[0] * pair[1]
+        denominator += pair[1]
+
+    return (numerator / denominator)
