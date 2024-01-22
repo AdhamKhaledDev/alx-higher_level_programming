@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-def safe_print_list_integers(input_list=[], num_elements=0):
-    count = 0
-    for index in range(num_elements):
+
+def safe_print_list_integers(my_list=[], x=0):
+    
+    thunder = 0
+    for i in range(0, x):
         try:
-            print("{:d}".format(input_list[index]), end="")
-            count += 1
+            print("{:d}".format(my_list[i]), end="")
+            thunder += 1
         except (ValueError, TypeError):
-            pass
-    print()
-    return count
+            continue
+    print("")
+    return (thunder)
