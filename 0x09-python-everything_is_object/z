@@ -1,10 +1,27 @@
 #!/bin/bash
 
-# Add all changes to the staging area
+# Ask for the file name
+echo "Enter the name of the file:"
+read fileName
+
+# Create the file
+touch $fileName
+
+# Change the file permissions
+chmod +x $fileName
+
+# Ask for the content to be written in the file
+echo "What do you want to write in this file?"
+read fileContent
+
+# Write the content to the file
+echo $fileContent > $fileName
+
+# Add the file to the git staging area
 git add .
 
-# Commit the changes with a specified message
+# Commit the changes
 git commit -m "Obj"
 
-# Push the committed changes to the remote repository
+# Push the changes
 git push
