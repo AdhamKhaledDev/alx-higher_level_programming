@@ -1,0 +1,17 @@
+#!/bin/bash
+
+read -p "Enter the filename: " -r filename
+
+if [ ! -f "$filename" ]; then
+  echo "Error: File '$filename' does not exist."
+  exit 1
+fi
+
+# Safer permission change
+chmod +x "$filename"
+echo "Setting execute permission (x) for the owner (you) on '$filename'."
+echo "**Warning:** Using 'chmod 777' is highly discouraged due to security risks."
+
+semistandard --fix "$filename"
+
+echo "Finished processing '$filename'."
