@@ -1,12 +1,12 @@
 function printMessage (argument) {
   if (argument === undefined) {
     console.log('Missing number of occurrences');
-    return; // Exit the function if no argument
+    return;
   }
 
   if (isNaN(parseInt(argument))) {
     console.log('Missing number of occurrences');
-    return; // Exit the function if not a number
+    return;
   }
 
   for (let i = 0; i < argument; i++) {
@@ -14,5 +14,4 @@ function printMessage (argument) {
   }
 }
 
-// Call the function with the first argument (replace with your desired input)
-printMessage(process.argv[2]); // For Node.js execution
+printMessage(process.argv[2]);
