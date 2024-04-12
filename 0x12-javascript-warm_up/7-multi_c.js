@@ -1,3 +1,4 @@
+#!/usr/bin/node
 function printMessage (argument) {
   if (argument === undefined) {
     console.log('Missing number of occurrences');
