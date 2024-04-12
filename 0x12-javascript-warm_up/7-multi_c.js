@@ -1,18 +1,11 @@
 #!/usr/bin/node
-function printMessage (argument) {
-  if (argument === undefined) {
-    console.log('Missing number of occurrences');
-    return;
-  }
-
-  if (isNaN(parseInt(argument))) {
-    console.log('Missing number of occurrences');
-    return;
-  }
-
-  for (let i = 0; i < argument; i++) {
+if (process.argv[2] === undefined || isNaN(process.argv[2])) {
+  console.log('Missing number of occurrences');
+} else {
+  const x = Number(process.argv[2]);
+  let i = 0;
+  while (i < x) {
     console.log('C is fun');
+    i++;
   }
 }
-
-printMessage(process.argv[2]);
