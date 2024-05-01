@@ -1,26 +1,8 @@
 #!/bin/bash
+# This script sends a GET request to a URL passed as an argument
+# and displays the body of the response. A header variable is also sent with the request.
 
-# Check if URL is provided as an argument
-if [ $# -eq 0 ]; then
-  echo "Error: Please provide a URL as an argument."
-  exit 1
-fi
+URL=$1
+HEADER="X-School-User-Id: 98"
 
-# Extract the URL from the argument
-url="$1"
-
-# Set the header value
-header_name="X-School-User-Id"
-header_value="98"
-
-# Send GET request with header using curl
-response=$(curl -s -H "$header_name: $header_value" "$url")
-
-# Check if curl command was successful
-if [ $? -eq 0 ]; then
-  # Display the body of the response
-  echo "$response"
-else
-  echo "Error: Failed to send GET request to $url"
-  exit 1
-fi
+curl -sH "$HEADER" "$URL"
